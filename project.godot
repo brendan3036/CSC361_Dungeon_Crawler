@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="CSC361_Bream_Nate"
-run/main_scene="res://Scene1.tscn"
+run/main_scene="res://Runner.tscn"
 config/icon="res://icon.png"
 
 [rendering]
