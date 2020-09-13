@@ -24,6 +24,7 @@ func _ready():
 	print(array[3])
 	for word in array:
 		print(word)
+	print(len(array))
 	
 	## Dictionary
 	# Create Dictionary
@@ -36,6 +37,15 @@ func _ready():
 	print(dict.Thing2)
 	for thing in dict:
 		print(thing)
+		
+		
+	for i in range(4,15):
+		print(i)
+		
+	var point = Vector2(45, 90)
+	print(point[0],",",point[1])
+	print(point.x,",",point.y)
+	print(point)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
