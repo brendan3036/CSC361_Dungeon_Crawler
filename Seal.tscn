@@ -1,8 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://seal-monk.png" type="Texture" id=1]
-[ext_resource path="res://Seal.gd" type="Script" id=2]
+[ext_resource path="res://Seal_ncb.gd" type="Script" id=2]
 [ext_resource path="res://seal.wav" type="AudioStream" id=3]
+
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
