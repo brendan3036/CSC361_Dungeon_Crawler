@@ -4,7 +4,6 @@
 [ext_resource path="res://Seal_ncb.gd" type="Script" id=2]
 [ext_resource path="res://seal.wav" type="AudioStream" id=3]
 
-
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
@@ -45,7 +44,6 @@ script = ExtResource( 2 )
 position = Vector2( 360.5, 229.5 )
 scale = Vector2( 4.15625, 3.71875 )
 frames = SubResource( 6 )
-frame = 4
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

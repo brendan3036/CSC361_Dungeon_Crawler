@@ -15,6 +15,8 @@ var seal = load("Seal.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	
 	# Brendan
 	var dwarf_instance = dwarf.instance()
 	var elf_instance = elf.instance()

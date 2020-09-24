@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://3.png" type="Texture" id=1]
 [ext_resource path="res://2.png" type="Texture" id=2]
@@ -9,14 +9,24 @@
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "walk",
+"name": "zomb",
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="AnimatedSprite"]
-frames = SubResource( 1 )
-animation = "walk"
-speed_scale = 2.0
-playing = true
-offset = Vector2( 300, 300 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.115, 47.9538 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 349.813, 122.771 )
+frames = SubResource( 1 )
+animation = "zomb"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 354.374, 122.841 )
+shape = SubResource( 2 )

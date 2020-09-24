@@ -1,6 +1,4 @@
-extends AnimatedSprite
-
-
+extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,19 +13,22 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var movement = Vector2(0, 0)
+	
 	if Input.is_action_pressed("move_up"):
 		#move up
-		position.y -= .1
+		movement = Vector2(0, -.5)
 		sound.play()
 	elif Input.is_action_pressed("move_down"):
-		position.y += .1
+		movement = Vector2(0, .5)
 		sound.play()
 	elif Input.is_action_pressed("move_left"):
-		position.x -= .1
+		movement = Vector2(-.5, 0)
 		sound.play()
 	elif Input.is_action_pressed("move_right"):
-		position.x += .1
+		movement = Vector2(.5, 0)
 		sound.play()
+	self.move_and_collide(movement)
 	
 	
 	
