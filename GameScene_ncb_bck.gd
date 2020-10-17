@@ -2,38 +2,33 @@ extends Node2D
 
 
 # Brendan
-const dwarf = preload("res://dwarf_bck.tscn")
-const elf = preload("res://elf_bck.tscn")
-const cyclops = preload("res://cyclops_bck.tscn")
-const zombie = preload("res://zombie_bck.tscn")
+const skeleton = preload("res://skeleton_bck.tscn")
+const warrior = preload("res://warrior_bck.tscn")
+const blueSlime = preload("res://blueSlime_bck.tscn")
 
 # Nate
-var randomGuy = load("RandomGuy.tscn")
-var potato = load("Potato.tscn")
-var egg = load("Egg.tscn")
-var seal = load("Seal.tscn")
+var eyeball = load("eyeball_ncb.tscn")
+var orc = load("orc_ncb.tscn")
+var redSlime = load("redSlime_ncb.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	
 	# Brendan
-	var dwarf_instance = dwarf.instance()
-	var elf_instance = elf.instance()
-	var cyclops_instance = cyclops.instance()
-	var zombie_instance = zombie.instance()
+	var skeleton_instance = skeleton.instance()
+	var warrior_instance = warrior.instance()
+	var blueSlime_instance = blueSlime.instance()
 	
 	# attach the instances to the tree - Brendan
-	self.add_child(elf_instance)
-	self.add_child(dwarf_instance)
-	self.add_child(cyclops_instance)
-	self.add_child(zombie_instance)
+	self.add_child(skeleton_instance)
+	self.add_child(warrior_instance)
+	self.add_child(blueSlime_instance)
 	
 	# Nate
-	self.add_child(randomGuy.instance())
-	self.add_child(potato.instance())
-	self.add_child(egg.instance())
-	self.add_child(seal.instance())
+	self.add_child(eyeball.instance())
+	self.add_child(orc.instance())
+	self.add_child(redSlime.instance())
 	
 	
 	pass
