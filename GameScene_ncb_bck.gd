@@ -5,6 +5,7 @@ extends Node2D
 const skeleton = preload("res://skeleton_bck.tscn")
 const warrior = preload("res://warrior_bck.tscn")
 const blueSlime = preload("res://blueSlime_bck.tscn")
+var tileMap = load("TileMaps.tscn")
 
 # Nate
 var eyeball = load("eyeball_ncb.tscn")
@@ -19,6 +20,7 @@ func _ready():
 	var skeleton_instance = skeleton.instance()
 	var warrior_instance = warrior.instance()
 	var blueSlime_instance = blueSlime.instance()
+	self.add_child(tileMap.instance())
 	
 	# attach the instances to the tree - Brendan
 	self.add_child(skeleton_instance)

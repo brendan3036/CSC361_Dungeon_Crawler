@@ -5,6 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 onready var animatedSprite = $AnimatedSprite
+onready var audioPlayer = $AudioStreamPlayer
 var attackAnimationCompleted = true
 var anim = "idle"
 var attackAnim = "idle"
@@ -16,23 +17,30 @@ func _ready():
 
 func _physics_process(delta):
 	var movement = Vector2(0, 0)
+	if animatedSprite.animation == "attack" && animatedSprite.frame == animatedSprite.frames.get_frame_count("attack")-1:
+		state = false
+		anim = "idle"
 	if Input.is_action_pressed('up'):
 		movement = Vector2(0, -1)
 		anim = "walking"
-		#sealNoise.play()
+		if audioPlayer.playing == false:
+			audioPlayer.play()
 	elif Input.is_action_pressed('left'):
 		get_node("AnimatedSprite").flip_h = true
 		movement = Vector2(-1, 0)
-		get_node("AudioStreamPlayer").play()
+		if audioPlayer.playing == false:
+			audioPlayer.play()
 		anim = "walking"
 	elif Input.is_action_pressed('down'):
 		movement = Vector2(0, 1)
-		get_node("AudioStreamPlayer").play()
+		if audioPlayer.playing == false:
+			audioPlayer.play()
 		anim = "walking"
 	elif Input.is_action_pressed('right'):
 		get_node("AnimatedSprite").flip_h = false
 		movement = Vector2(1, 0)
-		get_node("AudioStreamPlayer").play()
+		if audioPlayer.playing == false:
+			audioPlayer.play()
 		anim = "walking"
 	else:
 		anim = "idle"
