@@ -23,17 +23,16 @@ func _ready():
 	self.add_child(tileMap.instance())
 	
 	# attach the instances to the tree - Brendan
-	self.add_child(skeleton_instance)
-	self.add_child(warrior_instance)
+	#self.add_child(skeleton_instance)
+	#self.add_child(warrior_instance)
 	self.add_child(blueSlime_instance)
 	
 	# Nate
 	self.add_child(eyeball.instance())
-	self.add_child(orc.instance())
-	self.add_child(redSlime.instance())
+	#self.add_child(orc.instance())
+	#self.add_child(redSlime.instance())
 	
 	
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

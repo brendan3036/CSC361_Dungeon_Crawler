@@ -4,7 +4,6 @@
 [ext_resource path="res://warrior_ncb_bck.gd" type="Script" id=2]
 [ext_resource path="res://assests/sound-effects/step.wav" type="AudioStream" id=3]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.31177
 height = 13.4543
@@ -178,7 +177,7 @@ animations = [ {
 } ]
 
 [node name="Node2D" type="KinematicBody2D"]
-position = Vector2( 160.807, 109.581 )
+position = Vector2( -0.00549316, 0.0106888 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
