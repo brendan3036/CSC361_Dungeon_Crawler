@@ -14,7 +14,9 @@ var redSlime = load("redSlime_ncb.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	if not GameMusic.is_playing():
+		MenuMusic.stop()
+		GameMusic.play()
 	
 	# Brendan
 	var skeleton_instance = skeleton.instance()
@@ -31,10 +33,8 @@ func _ready():
 	self.add_child(eyeball.instance())
 	#self.add_child(orc.instance())
 	#self.add_child(redSlime.instance())
-	
-	
+func _process(delta):
+	if Input.is_action_pressed('ui_cancel'):
+		get_tree().change_scene("MainMenu.tscn")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

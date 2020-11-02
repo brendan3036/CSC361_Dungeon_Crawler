@@ -10,9 +10,9 @@ func _ready():
 	#playerPosition = get_node("res://warrior_bck.tscn").get_global_position()
 	playerPosition = get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").get_global_position()
 	#get_tree().get_root().print_tree()
-	print(origin)
+	#print(origin)
 	direction = (playerPosition - origin).normalized()
-	print(direction)
+	#print(direction)
 
 func _physics_process(delta):
 	move_and_collide(direction * delta * maxSpeed)

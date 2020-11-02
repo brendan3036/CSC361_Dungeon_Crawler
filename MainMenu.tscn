@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://assests/ui/Quicksand_Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu_bck.gd" type="Script" id=2]
@@ -6,125 +6,166 @@
 [ext_resource path="res://Credits.gd" type="Script" id=4]
 [ext_resource path="res://assests/ui/titlescreen.jpg" type="Texture" id=5]
 [ext_resource path="res://Options.gd" type="Script" id=6]
-[ext_resource path="res://assests/flac-music/battle.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assests/warrior spritesheet calciumtrice.png" type="Texture" id=8]
 [ext_resource path="res://assests/skeleton spritesheet calciumtrice.png" type="Texture" id=9]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFont" id=12]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="DynamicFont" id=18]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=19]
 size = 41
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 96, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 128, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 160, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 192, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 224, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 256, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 288, 32, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=30]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 96, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=35]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 128, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=36]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 160, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 192, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=38]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 224, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=39]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 256, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=40]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 288, 32, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=23]
+[sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -146,12 +187,22 @@ margin_right = 1280.0
 margin_bottom = 720.0
 texture = ExtResource( 5 )
 stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Play" type="Button" parent="."]
 margin_left = 578.31
 margin_top = 217.409
 margin_right = 683.31
 margin_bottom = 244.409
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 0.762695, 0.294949, 0.294949, 1 )
 text = "Play"
 script = ExtResource( 3 )
 __meta__ = {
@@ -163,6 +214,12 @@ margin_left = 584.082
 margin_top = 638.914
 margin_right = 689.082
 margin_bottom = 665.914
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "Credits"
 script = ExtResource( 4 )
 __meta__ = {
@@ -174,6 +231,12 @@ margin_left = 578.164
 margin_top = 255.163
 margin_right = 683.164
 margin_bottom = 282.163
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "Options"
 script = ExtResource( 6 )
 __meta__ = {
@@ -185,26 +248,22 @@ margin_left = 378.616
 margin_top = 35.0
 margin_right = 919.616
 margin_bottom = 113.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 19 )
 text = "Untitled Dungeon Crawler"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -38.369
 
 [node name="Warrior" type="AnimatedSprite" parent="."]
 position = Vector2( 224.925, 462.88 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 12 )
+frames = SubResource( 30 )
 animation = "idle"
-frame = 8
+frame = 3
 speed_scale = 1.5
 playing = true
 
 [node name="Skeleton" type="AnimatedSprite" parent="."]
 position = Vector2( 848.533, 311.52 )
 scale = Vector2( 4.5, 4.5 )
-frames = SubResource( 23 )
+frames = SubResource( 41 )
 animation = "idle"
 frame = 3
 playing = true
