@@ -11,7 +11,7 @@ func _ready():
 	self.connect("toggled", self, "_pressed")
 
 func _pressed():
-	get_tree().change_scene("Runner.tscn")
+	get_tree().change_scene("MainMenu.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

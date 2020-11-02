@@ -16,8 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="CSC361_Bream_Nate"
-run/main_scene="res://Runner.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
 
 [input]
 
