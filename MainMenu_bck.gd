@@ -4,7 +4,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if not MenuMusic.is_playing() or GameMusic.is_playiing():
+	if not MenuMusic.is_playing() or GameMusic.is_playing():
 		GameMusic.stop()
 		MenuMusic.play()
 	pass
