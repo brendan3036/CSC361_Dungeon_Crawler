@@ -6,6 +6,7 @@ var rng = RandomNumberGenerator.new()
 var x = 1
 onready var animatedSprite = $AnimatedSprite
 var anim = "idle"
+var moveSpeed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var timer = Timer.new()
@@ -23,24 +24,25 @@ func _timeout():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	moveSpeed = 60 * delta
 	var movement = Vector2(0, 0)
 	if x == 1:
 		anim = "walking"
-		movement = Vector2(0, -.5)
+		movement = Vector2(0, -moveSpeed)
 	# left
 	elif x == 2:
 		anim = "walking"
 		get_node("AnimatedSprite").flip_h = true
-		movement = Vector2(-.5, 0)
+		movement = Vector2(moveSpeed, 0)
 	# down
 	elif x == 3:
 		anim = "walking"
-		movement = Vector2(0, .5)
+		movement = Vector2(0, moveSpeed)
 	# right
 	elif x == 4:
 		anim = "walking"
 		get_node("AnimatedSprite").flip_h = false
-		movement = Vector2(.5, 0)
+		movement = Vector2(moveSpeed, 0)
 	# up
 	else:
 		anim = "idle"

@@ -63,7 +63,8 @@ func _input(event):
 	pass
 	
 func slash():
-	slashPos = get_node("res://warrior_bck.tscn").get_position() + Vector2(3,0)
+	# Get the position of where the slash will be
+	slashPos = get_position() + Vector2(1,0)
 	var node = slash.instance()
 	node.set_position(slashPos)
 	add_child(node)
@@ -77,6 +78,7 @@ func slash():
 	
 func _timeout():
 	for obj in get_children():
+		slashPos = get_position() + Vector2(1,0)
 		if obj.is_in_group("beta"):
 			remove_child(obj)
 			obj.queue_free() 
