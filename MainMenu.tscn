@@ -9,7 +9,6 @@
 [ext_resource path="res://assests/warrior spritesheet calciumtrice.png" type="Texture" id=7]
 [ext_resource path="res://assests/skeleton spritesheet calciumtrice.png" type="Texture" id=9]
 
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -56,59 +55,59 @@ font_data = ExtResource( 1 )
 size = 41
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 224, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 256, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 288, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=30]
 animations = [ {
-"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -257,7 +256,7 @@ position = Vector2( 224.925, 462.88 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 30 )
 animation = "idle"
-frame = 1
+frame = 3
 speed_scale = 1.5
 playing = true
 
@@ -266,6 +265,6 @@ position = Vector2( 848.533, 311.52 )
 scale = Vector2( 4.5, 4.5 )
 frames = SubResource( 41 )
 animation = "idle"
-frame = 3
+frame = 4
 playing = true
 flip_h = true
