@@ -6,6 +6,8 @@ extends KinematicBody2D
 # var b = "text"
 onready var animatedSprite = $AnimatedSprite
 onready var audioPlayer = $AudioStreamPlayer
+onready var slash = load("res://Slash.tscn")
+var slashPos = Vector2.ZERO
 var attackAnimationCompleted = true
 var anim = "idle"
 var attackAnim = "idle"
@@ -44,8 +46,14 @@ func _physics_process(delta):
 		anim = "walking"
 	else:
 		anim = "idle"
+	# If state, perform attack animation and instance the slash area/animation
 	if state:
+		slash()
 		anim = "attack"
+#	for obj in get_children():
+#		if obj.is_in_group("beta"):
+#			remove_child(obj)
+#			obj.queue_free()
 	animatedSprite.play(anim)
 	self.move_and_collide(movement)
 	
@@ -53,5 +61,25 @@ func _input(event):
 	if event.is_action_pressed('space'):
 		state = true
 	pass
+	
+func slash():
+	slashPos = get_node("res://warrior_bck.tscn").get_position() + Vector2(3,0)
+	var node = slash.instance()
+	node.set_position(slashPos)
+	add_child(node)
+	
+	var timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.start(1)
+	timer.connect("timeout", self, "_timeout")
+	#node.set_position(global_position + Vector2(10, 0))
+	
+func _timeout():
+	for obj in get_children():
+		if obj.is_in_group("beta"):
+			remove_child(obj)
+			obj.queue_free() 
+	
 	
 
