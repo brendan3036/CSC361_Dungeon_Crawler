@@ -51,7 +51,7 @@ font_data = ExtResource( 1 )
 size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=23]
 size = 41
 font_data = ExtResource( 1 )
 
@@ -70,7 +70,7 @@ flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=42]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 96, 0, 32, 32 )
@@ -107,7 +107,7 @@ region = Rect2( 288, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=30]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 42 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -174,9 +174,7 @@ animations = [ {
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.41425
-margin_right = 257.414
-margin_bottom = 120.0
+margin_bottom = 6.10352e-05
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -192,9 +190,9 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="."]
-margin_left = 578.31
+margin_left = 577.31
 margin_top = 217.409
-margin_right = 683.31
+margin_right = 682.31
 margin_bottom = 244.409
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -210,9 +208,9 @@ __meta__ = {
 }
 
 [node name="Credits" type="Button" parent="."]
-margin_left = 1136.08
+margin_left = 1135.08
 margin_top = 660.914
-margin_right = 1241.08
+margin_right = 1240.08
 margin_bottom = 687.914
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
@@ -227,9 +225,9 @@ __meta__ = {
 }
 
 [node name="Options" type="Button" parent="."]
-margin_left = 578.164
+margin_left = 577.164
 margin_top = 255.163
-margin_right = 683.164
+margin_right = 682.164
 margin_bottom = 282.163
 custom_styles/hover = SubResource( 13 )
 custom_styles/pressed = SubResource( 14 )
@@ -243,28 +241,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 378.616
+[node name="TitleText" type="Label" parent="."]
+margin_left = 377.616
 margin_top = 35.0
-margin_right = 919.616
+margin_right = 918.616
 margin_bottom = 113.0
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 23 )
 text = "Untitled Dungeon Crawler"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Warrior" type="AnimatedSprite" parent="."]
-position = Vector2( 224.925, 462.88 )
+position = Vector2( 223.925, 462.88 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 30 )
 animation = "idle"
-frame = 4
+frame = 3
 speed_scale = 1.5
 playing = true
 
 [node name="Skeleton" type="AnimatedSprite" parent="."]
-position = Vector2( 848.533, 311.52 )
+position = Vector2( 847.533, 311.52 )
 scale = Vector2( 4.5, 4.5 )
 frames = SubResource( 41 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 flip_h = true

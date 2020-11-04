@@ -5,3 +5,4 @@
 [node name="gameMusic" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
 volume_db = -35.34
+bus = "Music"
