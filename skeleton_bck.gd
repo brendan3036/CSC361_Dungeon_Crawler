@@ -51,11 +51,11 @@ func _process(delta):
 	else:
 		anim = "idle"
 		movement = Vector2(0,0)
-#		var pos = get_position()
-#		var node = bullet.instance()
-#		var tree = get_tree().get_root()
-#		tree.add_child(node)
-#		node.set_position(Vector2(pos.x - 1, pos.y - 1))
+		var pos = get_position()
+		var node = bullet.instance()
+		var tree = get_tree().get_root()
+		tree.add_child(node)
+		node.set_position(Vector2(pos.x - 1, pos.y - 1))
 	
 	animatedSprite.play(anim)
 	self.move_and_collide(movement)

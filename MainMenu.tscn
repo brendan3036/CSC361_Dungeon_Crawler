@@ -51,7 +51,7 @@ font_data = ExtResource( 1 )
 size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=19]
 size = 41
 font_data = ExtResource( 1 )
 
@@ -70,7 +70,7 @@ flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 96, 0, 32, 32 )
@@ -107,7 +107,7 @@ region = Rect2( 288, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=30]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 42 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -246,7 +246,7 @@ margin_left = 377.616
 margin_top = 35.0
 margin_right = 918.616
 margin_bottom = 113.0
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 19 )
 text = "Untitled Dungeon Crawler"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -266,6 +266,5 @@ position = Vector2( 847.533, 311.52 )
 scale = Vector2( 4.5, 4.5 )
 frames = SubResource( 41 )
 animation = "idle"
-frame = 4
 playing = true
 flip_h = true

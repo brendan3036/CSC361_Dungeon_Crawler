@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-onready var maxSpeed = 300
+onready var maxSpeed = 60
 onready var playerPosition = Vector2.ZERO
 onready var direction = Vector2.ZERO
 onready var origin = self.global_position
