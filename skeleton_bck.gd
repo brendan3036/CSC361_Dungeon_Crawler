@@ -21,6 +21,26 @@ func _ready():
 func _timeout():
 	rng.randomize()
 	x = rng.randi_range(1,10)
+	if x > 4:
+		# We have the player's position
+		var playerPosition = get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").get_global_position()
+		# Pos = skeleton's position (locally)
+		var pos = get_position()
+		var skellyGlobal = get_global_position()
+		var offset = 20
+		var bulletSpawn = Vector2(pos.x - offset, pos.y + offset)
+		
+		if playerPosition.x > skellyGlobal.x:
+			#bullet x needs to be on the right
+			bulletSpawn.x = pos.x + offset
+		if playerPosition.y < skellyGlobal.y:
+			#bullet y needs to be up
+			bulletSpawn.y = pos.y - offset
+			
+		var node = bullet.instance()
+		var tree = get_tree().get_root()
+		tree.add_child(node)
+		node.set_position(bulletSpawn)
 	# up
 	
 
@@ -51,11 +71,7 @@ func _process(delta):
 	else:
 		anim = "idle"
 		movement = Vector2(0,0)
-		var pos = get_position()
-		var node = bullet.instance()
-		var tree = get_tree().get_root()
-		tree.add_child(node)
-		node.set_position(Vector2(pos.x - 1, pos.y - 1))
+		
 	
 	animatedSprite.play(anim)
 	self.move_and_collide(movement)

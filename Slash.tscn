@@ -30,3 +30,4 @@ playing = true
 position = Vector2( -2.42163, -3.21535 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 2 )
+[connection signal="area_entered" from="." to="." method="_on_Slash_area_entered"]

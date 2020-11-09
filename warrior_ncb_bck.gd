@@ -23,24 +23,24 @@ func _physics_process(delta):
 		state = false
 		anim = "idle"
 	if Input.is_action_pressed('up'):
-		movement = Vector2(0, -1)
+		movement = Vector2(0, -1.2)
 		anim = "walking"
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 	elif Input.is_action_pressed('left'):
 		get_node("AnimatedSprite").flip_h = true
-		movement = Vector2(-1, 0)
+		movement = Vector2(-1.2, 0)
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"
 	elif Input.is_action_pressed('down'):
-		movement = Vector2(0, 1)
+		movement = Vector2(0, 1.2)
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"
 	elif Input.is_action_pressed('right'):
 		get_node("AnimatedSprite").flip_h = false
-		movement = Vector2(1, 0)
+		movement = Vector2(1.2, 0)
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"
@@ -64,7 +64,7 @@ func _input(event):
 	
 func slash():
 	# Get the position of where the slash will be
-	slashPos = get_position() + Vector2(1,0)
+	slashPos = get_global_position() + Vector2(1,0)
 	var node = slash.instance()
 	node.set_position(slashPos)
 	add_child(node)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assests/skeleton spritesheet calciumtrice.png" type="Texture" id=1]
 [ext_resource path="res://skeleton_bck.gd" type="Script" id=2]
@@ -120,12 +120,16 @@ animations = [ {
 radius = 9.00562
 height = 17.0323
 
+[sub_resource type="CircleShape2D" id=23]
+radius = 133.787
+
 [node name="Node2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 21 )
 animation = "walking"
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
@@ -133,3 +137,9 @@ playing = true
 ]]
 position = Vector2( 0, 0.794601 )
 shape = SubResource( 22 )
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource( 23 )
+disabled = true
