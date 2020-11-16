@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-var potionTest = load("PotionTest-ncb.tscn")
+var healthPotion = load("HealthPotion-ncb.tscn")
 var skelly = load("skeleton_bck.tscn")
 var orc = load("orc_ncb.tscn")
 var redSlime = load("redSlime_ncb.tscn")
@@ -34,7 +34,7 @@ func _ready():
 		elif name == "red slime":
 			node = redSlime.instance()
 		elif name == "potion":
-			node = potionTest.instance()
+			node = healthPotion.instance()
 		
 		place_node(node, pos)
 	pass

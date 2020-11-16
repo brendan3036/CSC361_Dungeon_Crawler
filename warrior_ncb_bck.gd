@@ -10,7 +10,7 @@ onready var slash = load("res://Slash.tscn")#
 onready var healthBar = get_node("healthBar")
 onready var healthBarText = get_node("healthBarText")
 #var slashPos = Vector2.ZERO
-var maxHealth = 5
+var maxHealth = 100
 var currentHealth
 var anim = "idle"
 var state = false
@@ -139,3 +139,10 @@ func die():
 			remove_child(obj)
 			obj.queue_free()
 	get_tree().change_scene("MainMenu.tscn")
+	
+#func damageBoost():
+#	var ttimer = Timer.new()
+#	ttimer.one_shot = true
+#	ttimer.start(3)
+#	yield(ttimer, "timeout")
+#	print("hello world")

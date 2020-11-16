@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assests/warrior spritesheet calciumtrice.png" type="Texture" id=1]
 [ext_resource path="res://warrior_ncb_bck.gd" type="Script" id=2]
@@ -178,6 +178,10 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=33]
+radius = 12.0686
+height = 14.624
+
 [node name="warrior_bck" type="KinematicBody2D"]
 position = Vector2( -0.00549316, 0.0106888 )
 script = ExtResource( 2 )
@@ -225,3 +229,8 @@ text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 33 )
