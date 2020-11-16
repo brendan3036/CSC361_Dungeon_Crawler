@@ -2,7 +2,9 @@
 
 [ext_resource path="res://assests/flac-music/fortress.ogg" type="AudioStream" id=1]
 
-[node name="gameMusic" type="AudioStreamPlayer"]
+[node name="gameMusic" type="AudioStreamPlayer" groups=[
+"music",
+]]
 stream = ExtResource( 1 )
 volume_db = -35.34
 bus = "Music"

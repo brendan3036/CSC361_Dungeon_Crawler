@@ -2,7 +2,9 @@
 
 [ext_resource path="res://assests/flac-music/battle.ogg" type="AudioStream" id=1]
 
-[node name="menuMusic" type="AudioStreamPlayer"]
+[node name="menuMusic" type="AudioStreamPlayer" groups=[
+"music",
+]]
 stream = ExtResource( 1 )
 volume_db = -36.349
 bus = "Music"

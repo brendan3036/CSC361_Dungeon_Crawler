@@ -20,18 +20,18 @@ func _ready():
 		GameMusic.play()
 	
 	# Brendan
-	var skeleton_instance = skeleton.instance()
-	var warrior_instance = warrior.instance()
-	var blueSlime_instance = blueSlime.instance()
+	#var skeleton_instance = skeleton.instance()
+	#var warrior_instance = warrior.instance()
+	#var blueSlime_instance = blueSlime.instance()
 	self.add_child(tileMap.instance())
 	
 	# attach the instances to the tree - Brendan
 	#self.add_child(skeleton_instance)
 	#self.add_child(warrior_instance)
-	self.add_child(blueSlime_instance)
+	#self.add_child(blueSlime_instance)
 	
 	# Nate
-	self.add_child(eyeball.instance())
+	#self.add_child(eyeball.instance())
 	#self.add_child(orc.instance())
 	#self.add_child(redSlime.instance())
 func _process(delta):

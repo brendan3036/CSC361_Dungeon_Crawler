@@ -7,9 +7,10 @@ extends KinematicBody2D
 onready var animatedSprite = $AnimatedSprite
 onready var audioPlayer = $AudioStreamPlayer
 onready var slash = load("res://Slash.tscn")#
-onready var healthBar = load("res://GUI.tscn")
+onready var healthBar = get_node("healthBar")
+onready var healthBarText = get_node("healthBarText")
 #var slashPos = Vector2.ZERO
-var maxHealth = 100
+var maxHealth = 5
 var currentHealth
 var anim = "idle"
 var state = false
@@ -19,13 +20,17 @@ var facing = 0
 func _ready():
 	currentHealth = maxHealth
 	print(currentHealth)
-	var healthb = healthBar.instance()
-	healthb.set_position(get_position().x-400, get_position().y+400)
-	self.add_child(healthb)
+#	var healthb = healthBar.instance()
+#	healthb.set_position(Vector2(get_position().x-400, get_position().y+400))
+#	self.add_child(healthb)
 	pass
 
 
 func _physics_process(delta):
+	healthBar.value = currentHealth
+	healthBarText.text = String(currentHealth)
+	if currentHealth <= 0:
+		die()
 	var moveSpeed = 60 * delta
 	if anim == "attack" && animatedSprite.frame == animatedSprite.frames.get_frame_count("attack")-1:
 		anim = "idle"
@@ -125,3 +130,12 @@ func _timeout():
 func attack_timeout():
 	flag = 0
 
+func die():
+	for obj in get_tree().get_root().get_children():
+		#slashPos = get_position() + Vector2(1,0)
+		if obj.is_in_group("music"):
+			pass
+		else:
+			remove_child(obj)
+			obj.queue_free()
+	get_tree().change_scene("MainMenu.tscn")
