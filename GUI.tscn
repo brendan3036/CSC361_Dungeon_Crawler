@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://HealthBar.gd" type="Script" id=1]
+[ext_resource path="res://assests/ui/healthbar/VIDA_10.png" type="Texture" id=2]
+[ext_resource path="res://assests/ui/healthbar/VIDA_0.png" type="Texture" id=3]
+
+[node name="Node2D" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = 17.0
+margin_top = 18.0
+margin_right = 395.0
+margin_bottom = 56.0
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

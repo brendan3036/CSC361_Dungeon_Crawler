@@ -7,13 +7,21 @@ extends KinematicBody2D
 onready var animatedSprite = $AnimatedSprite
 onready var audioPlayer = $AudioStreamPlayer
 onready var slash = load("res://Slash.tscn")#
+onready var healthBar = load("res://GUI.tscn")
 #var slashPos = Vector2.ZERO
+var maxHealth = 100
+var currentHealth
 var anim = "idle"
 var state = false
 var flag = 0
 var facing = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	currentHealth = maxHealth
+	print(currentHealth)
+	var healthb = healthBar.instance()
+	healthb.set_position(get_position().x-400, get_position().y+400)
+	self.add_child(healthb)
 	pass
 
 
@@ -68,6 +76,7 @@ func _physics_process(delta):
 #		if obj.is_in_group("beta"):
 #			remove_child(obj)
 #			obj.queue_free()
+
 	animatedSprite.play(anim)
 	self.move_and_collide(movement)
 	
