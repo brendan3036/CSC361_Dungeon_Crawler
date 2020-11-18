@@ -1,7 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assests/skeleton spritesheet calciumtrice.png" type="Texture" id=1]
 [ext_resource path="res://skeleton_bck.gd" type="Script" id=2]
+[ext_resource path="res://assests/ui/healthbar/VIDA_0.png" type="Texture" id=3]
+[ext_resource path="res://assests/ui/healthbar/VIDA_10.png" type="Texture" id=4]
+[ext_resource path="res://skeletonAttackRange.gd" type="Script" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -139,7 +142,30 @@ position = Vector2( 0, 0.794601 )
 shape = SubResource( 22 )
 
 [node name="AttackRange" type="Area2D" parent="."]
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource( 23 )
-disabled = true
+
+[node name="takeDamageRange" type="Area2D" parent="." groups=[
+"enemy",
+]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="takeDamageRange"]
+position = Vector2( 0, 0.794601 )
+shape = SubResource( 22 )
+
+[node name="healthBar" type="TextureProgress" parent="."]
+margin_left = -10.1131
+margin_top = -22.3587
+margin_right = 367.887
+margin_bottom = 17.6413
+rect_scale = Vector2( 0.0556537, 0.0866251 )
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="AttackRange" to="." method="_on_AttackRange_area_entered"]
+[connection signal="area_exited" from="AttackRange" to="." method="_on_AttackRange_area_exited"]

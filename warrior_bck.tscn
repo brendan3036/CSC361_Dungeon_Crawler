@@ -63,102 +63,102 @@ region = Rect2( 288, 0, 32, 32 )
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 0, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 32, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 96, 96, 32, 32 )
+region = Rect2( 96, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 128, 96, 32, 32 )
+region = Rect2( 128, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 96, 32, 32 )
+region = Rect2( 160, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 192, 96, 32, 32 )
+region = Rect2( 192, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 224, 96, 32, 32 )
+region = Rect2( 224, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 256, 96, 32, 32 )
+region = Rect2( 256, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 288, 96, 32, 32 )
+region = Rect2( 288, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 224, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 32, 224, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 64, 224, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 96, 224, 32, 32 )
+region = Rect2( 96, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 128, 224, 32, 32 )
+region = Rect2( 128, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 224, 32, 32 )
+region = Rect2( 160, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 192, 224, 32, 32 )
+region = Rect2( 192, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 224, 224, 32, 32 )
+region = Rect2( 224, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 256, 224, 32, 32 )
+region = Rect2( 256, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 288, 224, 32, 32 )
+region = Rect2( 288, 96, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
@@ -168,14 +168,14 @@ animations = [ {
 "speed": 3.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
-"loop": false,
-"name": "attack",
-"speed": 36.0
-}, {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "walking",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": false,
+"name": "attack",
+"speed": 36.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=33]
@@ -230,7 +230,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"player",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 33 )
+
+[node name="scoreText" type="RichTextLabel" parent="."]
+margin_left = -190.0
+margin_top = 93.0
+margin_bottom = 111.0
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scorePupText" type="RichTextLabel" parent="."]
+margin_left = -190.0
+margin_top = -81.0
+margin_right = 113.0
+margin_bottom = -41.0
+visible_characters = 0
+percent_visible = 0.0
+text = "Double Score: 25sec"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="damagePupText" type="RichTextLabel" parent="."]
+margin_left = -191.0
+margin_top = -67.0
+margin_right = 125.0
+margin_bottom = -27.0
+visible_characters = 0
+percent_visible = 0.0
+text = "Double Damage"
+__meta__ = {
+"_edit_use_anchors_": false
+}

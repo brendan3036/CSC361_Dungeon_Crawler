@@ -6,7 +6,7 @@ extends Area2D
 # var b = "text"
 onready var playerPosition = Vector2.ZERO
 var slashPosition = Vector2.ZERO
-
+var damage = 50
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	playerPosition = get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").get_global_position()
@@ -18,8 +18,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
 func _on_Slash_area_entered(area):
 	if area.is_in_group("enemy"):
-		# do damage but for now nothing
+		area.get_parent().health -= damage * get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").damageMult
 		print("hit enemy")
 	pass

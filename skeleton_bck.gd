@@ -6,8 +6,11 @@ var rng = RandomNumberGenerator.new()
 var x = 1
 onready var animatedSprite = $AnimatedSprite
 onready var bullet = load("res://Projectile.tscn")
+onready var healthBar = get_node("healthBar")
 var anim = "idle"
 var moveSpeed = 0
+var health = 100
+var attackFlag = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var timer = Timer.new()
@@ -21,7 +24,7 @@ func _ready():
 func _timeout():
 	rng.randomize()
 	x = rng.randi_range(1,10)
-	if x > 4:
+	if x > 4 and attackFlag:
 		# We have the player's position
 		var playerPosition = get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").get_global_position()
 		# Pos = skeleton's position (locally)
@@ -46,6 +49,10 @@ func _timeout():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	healthBar.value = health
+	if health <= 0:
+		get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").addScore(50)
+		queue_free()
 	# Use delta to calculate movement
 	# 30 * delta
 	moveSpeed = 60 * delta
@@ -77,3 +84,12 @@ func _process(delta):
 	self.move_and_collide(movement)
 	
 
+
+func _on_AttackRange_area_entered(area):
+	if area.is_in_group("player"):
+		attackFlag = true
+
+
+func _on_AttackRange_area_exited(area):
+	if area.is_in_group("player"):
+		attackFlag = false

@@ -10,6 +10,9 @@ var skelly = load("skeleton_bck.tscn")
 var orc = load("orc_ncb.tscn")
 var redSlime = load("redSlime_ncb.tscn")
 var warrior = load("warrior_bck.tscn")
+var coins = load("Coins.tscn")
+var doubleScorePotion = load("doubleScorePotion.tscn")
+var doubleDamagePotion = load("doubleDamagePotion.tscn")
 
 # Called when the node enters the scene tree for the first time.
 var tileMap
@@ -35,7 +38,12 @@ func _ready():
 			node = redSlime.instance()
 		elif name == "potion":
 			node = healthPotion.instance()
-		
+		elif name == "coins":
+			node = coins.instance()
+		elif name == "doubleScorePotion":
+			node = doubleScorePotion.instance()
+		elif name == "doubleDamagePotion":
+			node = doubleDamagePotion.instance()
 		place_node(node, pos)
 	pass
 

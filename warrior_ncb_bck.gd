@@ -6,16 +6,28 @@ extends KinematicBody2D
 # var b = "text"
 onready var animatedSprite = $AnimatedSprite
 onready var audioPlayer = $AudioStreamPlayer
-onready var slash = load("res://Slash.tscn")#
+onready var slash = load("res://Slash.tscn")
 onready var healthBar = get_node("healthBar")
 onready var healthBarText = get_node("healthBarText")
+onready var scoreText = get_node("scoreText")
+onready var scorePupText = get_node("scorePupText")
+onready var damagePupText = get_node("damagePupText")
 #var slashPos = Vector2.ZERO
 var maxHealth = 100
 var currentHealth
+
 var anim = "idle"
 var state = false
+
 var flag = 0
 var facing = 0
+
+var score = 0
+var scoreMultiplier = 1
+var scoreTimer = Timer.new()
+
+var damageMult = 1
+var damageTimer = Timer.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentHealth = maxHealth
@@ -29,8 +41,14 @@ func _ready():
 func _physics_process(delta):
 	healthBar.value = currentHealth
 	healthBarText.text = String(currentHealth)
+	scoreText.text = "Score: " + String(score)
+	
 	if currentHealth <= 0:
 		die()
+	if scoreTimer:
+		scorePupText.text = "Double Points: " + String(int(scoreTimer.time_left+1)) + "sec"
+	if damageTimer:
+		damagePupText.text = "Double Damage: " + String(int(damageTimer.time_left+1)) + "sec"
 	var moveSpeed = 60 * delta
 	if anim == "attack" && animatedSprite.frame == animatedSprite.frames.get_frame_count("attack")-1:
 		anim = "idle"
@@ -119,6 +137,8 @@ func slash():
 	timer.connect("timeout", self, "_timeout")
 	yield(timer, "timeout")
 	#node.set_position(global_position + Vector2(10, 0)))
+	
+
 func _timeout():
 	for obj in get_tree().get_root().get_children():
 		#slashPos = get_position() + Vector2(1,0)
@@ -129,6 +149,29 @@ func _timeout():
 
 func attack_timeout():
 	flag = 0
+
+func doubleScore():
+	scorePupText.percent_visible = 1
+	scoreMultiplier = 2
+	add_child(scoreTimer)
+	scoreTimer.one_shot = true
+	scoreTimer.start(20)
+	yield(scoreTimer, "timeout")
+	scoreMultiplier = 1
+	scorePupText.percent_visible = 0
+
+func doubleDamage():
+	damageMult = 2
+	damagePupText.percent_visible = 1
+	add_child(damageTimer)
+	damageTimer.one_shot = true
+	damageTimer.start(20)
+	yield(damageTimer, "timeout")
+	damagePupText.percent_visible = 0
+	damageMult = 1
+
+func addScore(points):
+	score = score + (points * scoreMultiplier)
 
 func die():
 	for obj in get_tree().get_root().get_children():
