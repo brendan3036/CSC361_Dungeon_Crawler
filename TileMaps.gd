@@ -14,6 +14,9 @@ var coins = load("Coins.tscn")
 var doubleScorePotion = load("doubleScorePotion.tscn")
 var doubleDamagePotion = load("doubleDamagePotion.tscn")
 var torch = load("torch.tscn")
+var redBanner = load("redBanner.tscn")
+var blueBanner = load("blueBanner.tscn")
+var blackBanner = load("blackBanner.tscn")
 
 # Called when the node enters the scene tree for the first time.
 var tileMap
@@ -47,6 +50,12 @@ func _ready():
 			node = doubleDamagePotion.instance()
 		elif name == "torch":
 			node = torch.instance()
+		elif name == "redBanner":
+			node = redBanner.instance()
+		elif name == "blueBanner":
+			node = blueBanner.instance()
+		elif name == "blackBanner":
+			node = blackBanner.instance()
 		place_node(node, pos)
 	pass
 

@@ -28,6 +28,9 @@ var scoreTimer = Timer.new()
 
 var damageMult = 1
 var damageTimer = Timer.new()
+
+var slimeDamageTimer = Timer.new()
+var slimeAttack = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentHealth = maxHealth
@@ -59,6 +62,7 @@ func _physics_process(delta):
 		anim = "walking"
 		if audioPlayer.playing == false:
 			audioPlayer.play()
+		get_node("AnimatedSprite/Particles2D").emitting = true
 	if Input.is_action_pressed('left'):
 		get_node("AnimatedSprite").flip_h = true
 		#movement = Vector2(-1.2, 0)
@@ -67,12 +71,15 @@ func _physics_process(delta):
 			audioPlayer.play()
 		anim = "walking"
 		facing = 1
+		get_node("AnimatedSprite/Particles2D").emitting = true
+		get_node("AnimatedSprite/Particles2D").rotation_degrees = 350
 	if Input.is_action_pressed('down'):
 		#movement = Vector2(0, 1.2)
 		movement.y += 1.2
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"
+		get_node("AnimatedSprite/Particles2D").emitting = true
 	if Input.is_action_pressed('right'):
 		get_node("AnimatedSprite").flip_h = false
 		#movement = Vector2(1.2, 0)
@@ -80,11 +87,14 @@ func _physics_process(delta):
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"
+		get_node("AnimatedSprite/Particles2D").emitting = true
+		get_node("AnimatedSprite/Particles2D").rotation_degrees = 190
 		facing = 0
 	if Input.is_action_pressed('space'):
 		state = true
 	if not movement:
 		anim = "idle"
+		get_node("AnimatedSprite/Particles2D").emitting = false
 	
 	# If state, perform attack animation and instance the slash area/animation
 	if state:
@@ -189,3 +199,21 @@ func die():
 #	ttimer.start(3)
 #	yield(ttimer, "timeout")
 #	print("hello world")
+
+
+func _on_damage_area_entered(area):
+	if area.is_in_group('slime'):
+		slimeAttack = true
+		currentHealth -= 10
+		while slimeAttack:
+			add_child(slimeDamageTimer)
+			slimeDamageTimer.one_shot = true
+			slimeDamageTimer.start(1)
+			yield(slimeDamageTimer, "timeout")
+			currentHealth -= 10
+
+
+func _on_damage_area_exited(area):
+	if area.is_in_group('slime'):
+		slimeAttack = false
+		slimeDamageTimer.stop()
