@@ -4,7 +4,9 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 var rng = RandomNumberGenerator.new()
 var x = 1
+var health = 100
 onready var animatedSprite = $AnimatedSprite
+onready var healthBar = get_node("healthBar")
 var anim = "idle"
 var moveSpeed = 0
 
@@ -26,6 +28,10 @@ func _timeout():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	healthBar.value = health
+	if health <= 0:
+		get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").addScore(50)
+		queue_free()
 	var origin = self.global_position
 	var playerPosition = get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").get_global_position()
 	var direction = (playerPosition - origin).normalized()
@@ -34,6 +40,7 @@ func _process(delta):
 	var movement = Vector2(0, 0)
 	if attackFlag and x < 5:
 		movement = direction * moveSpeed
+		anim = "walking"
 	elif x == 1:
 		anim = "walking"
 		movement = Vector2(0, -moveSpeed)
