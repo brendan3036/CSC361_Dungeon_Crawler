@@ -13,7 +13,7 @@ onready var scoreText = get_node("scoreText")
 onready var scorePupText = get_node("scorePupText")
 onready var damagePupText = get_node("damagePupText")
 #var slashPos = Vector2.ZERO
-var maxHealth = 100
+var maxHealth = 100000
 var currentHealth
 
 var anim = "idle"
@@ -215,5 +215,5 @@ func _on_damage_area_entered(area):
 
 func _on_damage_area_exited(area):
 	if area.is_in_group('slime'):
-		slimeAttack = false
-		slimeDamageTimer.stop()
+		slimeDamageTimer.queue_free()
+		slimeDamageTimer = Timer.new()
