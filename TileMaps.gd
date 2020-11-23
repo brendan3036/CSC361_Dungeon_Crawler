@@ -13,6 +13,7 @@ var warrior = load("warrior_bck.tscn")
 var coins = load("Coins.tscn")
 var doubleScorePotion = load("doubleScorePotion.tscn")
 var doubleDamagePotion = load("doubleDamagePotion.tscn")
+var torch = load("torch.tscn")
 
 # Called when the node enters the scene tree for the first time.
 var tileMap
@@ -44,6 +45,8 @@ func _ready():
 			node = doubleScorePotion.instance()
 		elif name == "doubleDamagePotion":
 			node = doubleDamagePotion.instance()
+		elif name == "torch":
+			node = torch.instance()
 		place_node(node, pos)
 	pass
 
