@@ -25,6 +25,8 @@ MenuMusic="*res://menuMusic.tscn"
 GameMusic="*res://gameMusic.tscn"
 coinSound="*res://coinSound.tscn"
 painSound1="*res://painSound1.tscn"
+painSound2="*res://painSound2.tscn"
+painSound3="*res://painSound3.tscn"
 
 [debug]
 

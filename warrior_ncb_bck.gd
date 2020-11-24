@@ -18,7 +18,8 @@ var currentHealth
 
 var anim = "idle"
 var state = false
-
+var rng = RandomNumberGenerator.new()
+var x = 1
 var flag = 0
 var facing = 0
 
@@ -30,7 +31,9 @@ var damageMult = 1
 var damageTimer = Timer.new()
 
 var slimeDamageTimer = Timer.new()
+var fireDamageTimer = Timer.new()
 var slimeAttack = false
+var fireAttack = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentHealth = maxHealth
@@ -196,19 +199,42 @@ func _on_damage_area_entered(area):
 	if area.is_in_group('slime'):
 		slimeAttack = true
 		currentHealth -= 10
-		painSound1.play()
+		playHurtSound()
 		while slimeAttack:
 			add_child(slimeDamageTimer)
 			slimeDamageTimer.one_shot = true
 			slimeDamageTimer.start(1)
 			yield(slimeDamageTimer, "timeout")
+			playHurtSound()
 			currentHealth -= 10
-			painSound1.play()
-			
-
+	elif area.is_in_group('fire'):
+		fireAttack = true
+		currentHealth -= 5
+		playHurtSound()
+		while fireAttack:
+			add_child(fireDamageTimer)
+			fireDamageTimer.one_shot = true
+			fireDamageTimer.start(0.4)
+			yield(fireDamageTimer, "timeout")
+			playHurtSound()
+			currentHealth-=5
+	
 
 func _on_damage_area_exited(area):
 	if area.is_in_group('slime'):
 		slimeDamageTimer.queue_free()
 		slimeDamageTimer = Timer.new()
+	if area.is_in_group('fire'):
+		fireDamageTimer.queue_free()
+		fireDamageTimer = Timer.new()
+		
+func playHurtSound():
+	rng.randomize()
+	x = rng.randi_range(1,3)
+	if x == 1:
+		painSound1.play()
+	elif x == 2:
+		painSound2.play()
+	elif x == 3:
+		painSound3.play()
 

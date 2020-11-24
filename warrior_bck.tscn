@@ -7,8 +7,8 @@
 [ext_resource path="res://assests/ui/healthbar/VIDA_0.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 8.31177
-height = 13.4543
+radius = 7.25549
+height = 18.1644
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -206,9 +206,8 @@ height = 14.624
 position = Vector2( -0.00549316, 0.0106888 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
-"player",
-]]
+[node name="movementCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -258,11 +257,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="." groups=[
+[node name="pickupArea" type="Area2D" parent="." groups=[
 "player",
 ]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupArea"]
 shape = SubResource( 36 )
 
 [node name="scoreText" type="RichTextLabel" parent="."]
@@ -297,5 +296,5 @@ text = "Double Damage"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="area_entered" from="Area2D" to="." method="_on_damage_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_damage_area_exited"]
+[connection signal="area_entered" from="pickupArea" to="." method="_on_damage_area_entered"]
+[connection signal="area_exited" from="pickupArea" to="." method="_on_damage_area_exited"]

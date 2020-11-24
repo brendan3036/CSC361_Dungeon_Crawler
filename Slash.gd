@@ -22,5 +22,5 @@ func _ready():
 func _on_Slash_area_entered(area):
 	if area.is_in_group("enemy"):
 		area.get_parent().health -= damage * get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").damageMult
-		print("hit enemy")
+		#print("hit enemy")
 	pass
