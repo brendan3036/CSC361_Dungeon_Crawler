@@ -20,7 +20,9 @@ func _ready():
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("player"):
 		var warrior = area.get_parent()
-		if warrior.currentHealth <= warrior.maxHealth - healing:
+		if warrior.currentHealth == warrior.maxHealth:
+			return
+		elif warrior.currentHealth <= warrior.maxHealth - healing:
 			warrior.currentHealth += healing
 		else:
 			warrior.currentHealth = warrior.maxHealth

@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 MenuMusic="*res://menuMusic.tscn"
 GameMusic="*res://gameMusic.tscn"
 coinSound="*res://coinSound.tscn"
+painSound1="*res://painSound1.tscn"
 
 [debug]
 

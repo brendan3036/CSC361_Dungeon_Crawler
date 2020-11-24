@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pain1.wav-72e4e1c0e682ef70d3346f43c980b29c.sample"
+
+[deps]
+
+source_file="res://assests/sound-effects/playerHurtSounds/pain1.wav"
+dest_files=[ "res://.import/pain1.wav-72e4e1c0e682ef70d3346f43c980b29c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

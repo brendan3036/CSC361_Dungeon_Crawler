@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/painh.wav-26d2c1f3bd2ea525e7b84a023f635cbe.sample"
+
+[deps]
+
+source_file="res://assests/sound-effects/playerHurtSounds/painh.wav"
+dest_files=[ "res://.import/painh.wav-26d2c1f3bd2ea525e7b84a023f635cbe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

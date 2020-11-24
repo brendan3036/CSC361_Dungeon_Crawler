@@ -196,12 +196,15 @@ func _on_damage_area_entered(area):
 	if area.is_in_group('slime'):
 		slimeAttack = true
 		currentHealth -= 10
+		painSound1.play()
 		while slimeAttack:
 			add_child(slimeDamageTimer)
 			slimeDamageTimer.one_shot = true
 			slimeDamageTimer.start(1)
 			yield(slimeDamageTimer, "timeout")
 			currentHealth -= 10
+			painSound1.play()
+			
 
 
 func _on_damage_area_exited(area):
