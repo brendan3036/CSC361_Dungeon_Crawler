@@ -18,6 +18,8 @@ func _ready():
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("player"):
+		# Also play the coin sound
+		coinSound.play()
 		area.get_parent().addScore(points)
 		self.get_parent().queue_free()
 	else:

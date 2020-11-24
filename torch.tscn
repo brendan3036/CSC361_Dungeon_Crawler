@@ -2,20 +2,20 @@
 
 [ext_resource path="res://assests/dungeon tileset calciumtrice.png" type="Texture" id=1]
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.0148148, 0.481481, 1 )
 colors = PoolColorArray( 0.815686, 0.686275, 0.0941176, 0.490196, 0.825195, 0.492339, 0.277214, 0.770839, 0.839216, 0.133333, 0.133333, 0.545098 )
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="Curve" id=1]
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0.0126582, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.322727 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=2]
-curve = SubResource( 1 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
 emission_box_extents = Vector3( 1, 1, 1 )
 flag_disable_z = true
@@ -29,8 +29,8 @@ orbit_velocity_random = 0.0
 linear_accel = 1.5
 angle = 45.0
 scale = 1.5
-scale_curve = SubResource( 2 )
-color_ramp = SubResource( 5 )
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
 
 [node name="Node2D" type="Sprite"]
 texture = ExtResource( 1 )
@@ -43,4 +43,4 @@ position = Vector2( -0.0525551, 0.735785 )
 rotation = -1.51844
 amount = 40
 lifetime = 2.0
-process_material = SubResource( 3 )
+process_material = SubResource( 5 )
