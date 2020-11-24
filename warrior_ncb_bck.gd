@@ -13,7 +13,7 @@ onready var scoreText = get_node("scoreText")
 onready var scorePupText = get_node("scorePupText")
 onready var damagePupText = get_node("damagePupText")
 #var slashPos = Vector2.ZERO
-var maxHealth = 100000
+var maxHealth = 100
 var currentHealth
 
 var anim = "idle"
@@ -35,9 +35,7 @@ var slimeAttack = false
 func _ready():
 	currentHealth = maxHealth
 	print(currentHealth)
-#	var healthb = healthBar.instance()
-#	healthb.set_position(Vector2(get_position().x-400, get_position().y+400))
-#	self.add_child(healthb)
+#
 	pass
 
 
@@ -192,13 +190,6 @@ func die():
 			remove_child(obj)
 			obj.queue_free()
 	get_tree().change_scene("MainMenu.tscn")
-	
-#func damageBoost():
-#	var ttimer = Timer.new()
-#	ttimer.one_shot = true
-#	ttimer.start(3)
-#	yield(ttimer, "timeout")
-#	print("hello world")
 
 
 func _on_damage_area_entered(area):
@@ -217,3 +208,4 @@ func _on_damage_area_exited(area):
 	if area.is_in_group('slime'):
 		slimeDamageTimer.queue_free()
 		slimeDamageTimer = Timer.new()
+
