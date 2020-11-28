@@ -19,6 +19,7 @@ func _ready():
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("player"):
 		area.get_parent().doubleScore()
+		potionDrink.play()
 		self.get_parent().queue_free()
 	else:
 		pass

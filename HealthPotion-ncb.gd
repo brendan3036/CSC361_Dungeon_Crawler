@@ -24,8 +24,10 @@ func _on_Area2D_area_entered(area):
 			return
 		elif warrior.currentHealth <= warrior.maxHealth - healing:
 			warrior.currentHealth += healing
+			potionDrink.play()
 		else:
 			warrior.currentHealth = warrior.maxHealth
+			potionDrink.play()
 		self.get_parent().queue_free()
 	else:
 		pass

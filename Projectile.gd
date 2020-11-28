@@ -24,7 +24,6 @@ func _physics_process(delta):
 			warrior.playHurtSound()
 			warrior.currentHealth -= 5
 			print(warrior.currentHealth)
-#			
 			pass
 		queue_free()
 	

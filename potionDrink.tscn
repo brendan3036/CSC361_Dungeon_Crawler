@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assests/sound-effects/potionDrink.wav" type="AudioStream" id=1]
+
+[node name="Node2D" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -29.282
+pitch_scale = 1.25

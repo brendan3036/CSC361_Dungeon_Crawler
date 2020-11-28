@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/potionDrink.wav-a52ca8e66ddf8e3652c22b56e00debe6.sample"
+
+[deps]
+
+source_file="res://assests/sound-effects/potionDrink.wav"
+dest_files=[ "res://.import/potionDrink.wav-a52ca8e66ddf8e3652c22b56e00debe6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
