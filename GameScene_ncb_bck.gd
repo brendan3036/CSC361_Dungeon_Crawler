@@ -15,31 +15,34 @@ var orc = load("orc_ncb.tscn")
 var redSlime = load("redSlime_ncb.tscn")
 
 var firstLevelDone = 0
-
+var current_map
+var player
+var maps = {
+	"tileMap": "res://TileMaps.tscn",
+	"tileMap_2": "res://TileMaps_2.tscn"
+}
+const STARTING_MAP = "tileMap"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(self)
 	if not GameMusic.is_playing():
 		MenuMusic.stop()
 		GameMusic.play()
-	
-	# Brendan
-	#var skeleton_instance = skeleton.instance()
-	#var warrior_instance = warrior.instance()
-	#var blueSlime_instance = blueSlime.instance()
-	self.add_child(tileMap.instance())
-	#self.add_child(tileMap_2.instance())
+	load_player(100);
+	self.show_map(STARTING_MAP)
 	
 	
-	# attach the instances to the tree - Brendan
-	#self.add_child(skeleton_instance)
-	#self.add_child(warrior_instance)
-	#self.add_child(blueSlime_instance)
+func show_map(map_name):
+	if self.current_map != null:
+		self.current_map.queue_free()
+	self.current_map = load(maps[map_name]).instance()
+	self.current_map.z_index = -1
+	self.add_child(self.current_map)
 	
-	# Nate
-	#self.add_child(eyeball.instance())
-	#self.add_child(orc.instance())
-	#self.add_child(redSlime.instance())
+func load_player(health):
+	var node = warrior.instance()
+	node.set_position(Vector2(600, 270))
+	self.add_child(node)
+
 func _process(delta):
 	if Input.is_action_pressed('ui_cancel'):
 		get_tree().change_scene("MainMenu.tscn")

@@ -34,6 +34,8 @@ var slimeDamageTimer = Timer.new()
 var fireDamageTimer = Timer.new()
 var slimeAttack = false
 var fireAttack = false
+# default gameplay movespeed is 1.2
+const MOVEMENT_SPEED = 2.5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentHealth = maxHealth
@@ -59,7 +61,7 @@ func _physics_process(delta):
 	var movement = Vector2()
 	if Input.is_action_pressed('up'):
 		#movement = Vector2(0, -1.2)
-		movement.y -= 1.2
+		movement.y -= MOVEMENT_SPEED
 		anim = "walking"
 		if audioPlayer.playing == false:
 			audioPlayer.play()
@@ -67,7 +69,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed('left'):
 		get_node("AnimatedSprite").flip_h = true
 		#movement = Vector2(-1.2, 0)
-		movement.x -= 1.2
+		movement.x -= MOVEMENT_SPEED
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"
@@ -76,7 +78,7 @@ func _physics_process(delta):
 		get_node("AnimatedSprite/Particles2D").rotation_degrees = 350
 	if Input.is_action_pressed('down'):
 		#movement = Vector2(0, 1.2)
-		movement.y += 1.2
+		movement.y += MOVEMENT_SPEED
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"
@@ -84,7 +86,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed('right'):
 		get_node("AnimatedSprite").flip_h = false
 		#movement = Vector2(1.2, 0)
-		movement.x += 1.2
+		movement.x += MOVEMENT_SPEED
 		if audioPlayer.playing == false:
 			audioPlayer.play()
 		anim = "walking"

@@ -13,6 +13,10 @@ var health = 100
 var attackFlag = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+#	var parent = get_parent().get_parent().name
+#	print("skelly parent's parent = ", parent)
+#	var warriorhopefully = get_parent().get_parent().get_child(0).name
+#	print("warrior name = ", warriorhopefully)
 	var timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = false
@@ -26,13 +30,14 @@ func _timeout():
 	x = rng.randi_range(1,10)
 	if x > 4 and attackFlag:
 		# We have the player's position
-		var playerPosition = get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").get_global_position()
+		var playerPosition = get_parent().get_parent().get_child(0).get_global_position()
 		# Pos = skeleton's position (locally)
 		var pos = get_position()
 		var skellyGlobal = get_global_position()
 		var offset = 20
 		var bulletSpawn = Vector2(pos.x - offset, pos.y + offset)
-		
+		var node = bullet.instance()
+		node.look_at(playerPosition)
 		if playerPosition.x > skellyGlobal.x:
 			#bullet x needs to be on the right
 			bulletSpawn.x = pos.x + offset
@@ -40,7 +45,7 @@ func _timeout():
 			#bullet y needs to be up
 			bulletSpawn.y = pos.y - offset
 			
-		var node = bullet.instance()
+		
 		var tree = get_tree().get_root()
 		tree.add_child(node)
 		node.set_position(bulletSpawn)
@@ -51,7 +56,7 @@ func _timeout():
 func _process(delta):
 	healthBar.value = health
 	if health <= 0:
-		get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").addScore(50)
+		get_parent().get_parent().get_child(0).addScore(50)
 		queue_free()
 	# Use delta to calculate movement
 	# 30 * delta

@@ -9,7 +9,6 @@ onready var animatedSprite = $AnimatedSprite
 onready var healthBar = get_node("healthBar")
 var anim = "idle"
 var moveSpeed = 0
-
 var attackFlag = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,10 +29,10 @@ func _timeout():
 func _process(delta):
 	healthBar.value = health
 	if health <= 0:
-		get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").addScore(50)
+		get_parent().get_parent().get_child(0).addScore(50)
 		queue_free()
 	var origin = self.global_position
-	var playerPosition = get_tree().get_root().get_node("Node2D/Node2D/warrior_bck").get_global_position()
+	var playerPosition = get_parent().get_parent().get_child(0).get_global_position()
 	var direction = (playerPosition - origin).normalized()
 	
 	moveSpeed = 60 * delta
