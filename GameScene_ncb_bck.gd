@@ -19,7 +19,8 @@ var current_map
 var player
 var maps = {
 	"tileMap": "res://TileMaps.tscn",
-	"tileMap_2": "res://TileMaps_2.tscn"
+	"tileMap_2": "res://TileMaps_2.tscn",
+	"tileMap_3": "res://TileMaps_3.tscn"
 }
 const STARTING_MAP = "tileMap"
 # Called when the node enters the scene tree for the first time.

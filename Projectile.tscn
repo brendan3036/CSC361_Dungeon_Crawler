@@ -40,16 +40,16 @@ scale = Vector2( 0.0687665, 0.0687665 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( -16.0992, 4.57764e-05 )
+position = Vector2( -4.44272, 3.43323e-05 )
 rotation = 1.5708
-scale = Vector2( 2, 4.09649 )
+scale = Vector2( 2.3, 4.90034 )
 frames = SubResource( 5 )
 frame = 2
 playing = true
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -0.353546 )
+position = Vector2( 14.542, -0.353546 )
 rotation = 1.5708
-scale = Vector2( 2, 2 )
+scale = Vector2( 2.3, 2.3 )
 shape = SubResource( 6 )

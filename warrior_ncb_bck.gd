@@ -201,6 +201,7 @@ func _on_damage_area_entered(area):
 	if area.is_in_group('slime'):
 		slimeAttack = true
 		currentHealth -= 10
+		
 		playHurtSound()
 		while slimeAttack:
 			add_child(slimeDamageTimer)
@@ -231,6 +232,9 @@ func _on_damage_area_exited(area):
 		fireDamageTimer = Timer.new()
 		
 func playHurtSound():
+	# also shake the screen
+	$Camera2D.shake(0.2, 15, 1.5)
+	
 	rng.randomize()
 	x = rng.randi_range(1,3)
 	if x == 1:

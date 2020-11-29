@@ -14,6 +14,9 @@ func _process(delta):
 		if parentName == "TileMap":
 			# clear the tilemap, keep the player, load the new instance
 			get_parent().get_parent().show_map("tileMap_2")
+		elif parentName == "TileMap2":
+			get_parent().get_parent().show_map("tileMap_3")
+			
 		
 		
 		
