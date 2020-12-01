@@ -10,8 +10,10 @@ onready var healthBar = get_node("healthBar")
 var anim = "idle"
 var moveSpeed = 0
 var attackFlag = false
+var warrior
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	warrior = get_tree().get_root().get_node("Game").get_node("warrior_bck")
 	var timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = false
@@ -29,10 +31,10 @@ func _timeout():
 func _process(delta):
 	healthBar.value = health
 	if health <= 0:
-		get_parent().get_parent().get_child(0).addScore(50)
+		warrior.addScore(50)
 		queue_free()
 	var origin = self.global_position
-	var playerPosition = get_parent().get_parent().get_child(0).get_global_position()
+	var playerPosition = warrior.get_global_position()
 	var direction = (playerPosition - origin).normalized()
 	
 	moveSpeed = 60 * delta

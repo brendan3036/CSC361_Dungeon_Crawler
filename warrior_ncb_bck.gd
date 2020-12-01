@@ -44,11 +44,12 @@ func _ready():
 	pass
 
 
+
+
 func _physics_process(delta):
 	healthBar.value = currentHealth
 	healthBarText.text = String(currentHealth)
 	scoreText.text = "Score: " + String(score)
-	
 	if currentHealth <= 0:
 		die()
 	if scoreTimer:
@@ -114,7 +115,11 @@ func _physics_process(delta):
 #			obj.queue_free()
 
 	animatedSprite.play(anim)
-	self.move_and_collide(movement)
+	var collision = move_and_collide(movement)
+	if collision:
+		#print(collision.collider.name)
+		if collision.collider.name == "Arrow":
+			print("hah")
 	
 func _input(event):
 	
@@ -189,7 +194,7 @@ func addScore(points):
 func die():
 	for obj in get_tree().get_root().get_children():
 		#slashPos = get_position() + Vector2(1,0)
-		if obj.is_in_group("music"):
+		if obj.is_in_group("music") or obj.is_in_group("essential"):
 			pass
 		else:
 			remove_child(obj)

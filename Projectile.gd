@@ -6,21 +6,21 @@ onready var playerPosition = Vector2.ZERO
 onready var direction = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 var x
+var warrior 
 
 func _ready():
 	yield(get_tree().create_timer(.1), "timeout")
 	var origin = self.global_position
-#	var blah = get_tree().get_root().get_child(7).get_child(0).name
-#	print("blah = ", blah)
-	playerPosition = get_tree().get_root().get_child(7).get_child(0).get_global_position()
+	warrior = get_tree().get_root().get_node("Game").get_node("warrior_bck")
+	playerPosition = warrior.get_global_position()
 	direction = (playerPosition - origin).normalized()
-	#self.rotation_degrees += 90
-	look_at(direction)
 	print(direction)
 
 func _physics_process(delta):
+	look_at(direction)
 	var collision = move_and_collide(direction * delta * maxSpeed)
-	var warrior = get_tree().get_root().get_child(7).get_child(0)
+	#var warrior = get_tree().get_root().get_child(7).get_node("warrior_bck")
+	#var warrior = get_tree().get_root().get_child(7).get_child(0)
 	if collision:
 		#print(collision.collider.name)
 		if collision.collider.name == "warrior_bck":

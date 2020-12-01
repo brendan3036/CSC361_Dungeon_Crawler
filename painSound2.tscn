@@ -2,7 +2,9 @@
 
 [ext_resource path="res://assests/sound-effects/playerHurtSounds/pain2.wav" type="AudioStream" id=1]
 
-[node name="Node2D" type="AudioStreamPlayer"]
+[node name="Node2D" type="AudioStreamPlayer" groups=[
+"essential",
+]]
 stream = ExtResource( 1 )
 volume_db = -30.291
 pitch_scale = 1.4

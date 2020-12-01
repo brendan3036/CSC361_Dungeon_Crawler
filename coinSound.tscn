@@ -2,6 +2,8 @@
 
 [ext_resource path="res://assests/sound-effects/coin.wav" type="AudioStream" id=1]
 
-[node name="Node2D" type="AudioStreamPlayer"]
+[node name="Node2D" type="AudioStreamPlayer" groups=[
+"essential",
+]]
 stream = ExtResource( 1 )
 volume_db = -15.146
