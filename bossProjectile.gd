@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-onready var maxSpeed = 100
+onready var maxSpeed = 50
 onready var playerPosition = Vector2.ZERO
 onready var direction = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
@@ -32,7 +32,7 @@ func _physics_process(delta):
 		if collision.collider.name == "warrior_bck":
 			# subtract x amount of hp from warrior 
 			warrior.playHurtSound()
-			warrior.currentHealth -= 5
+			warrior.currentHealth -= 10
 			print(warrior.currentHealth)
 			pass
 		queue_free()

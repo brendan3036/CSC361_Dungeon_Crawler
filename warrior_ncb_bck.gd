@@ -199,7 +199,7 @@ func die():
 		else:
 			remove_child(obj)
 			obj.queue_free()
-	get_tree().change_scene("MainMenu.tscn")
+	get_tree().change_scene("GameOverDeath.tscn")
 
 
 func _on_damage_area_entered(area):

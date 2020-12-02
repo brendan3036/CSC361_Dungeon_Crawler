@@ -27,6 +27,7 @@ const STARTING_MAP = "tileMap"
 func _ready():
 	if not GameMusic.is_playing():
 		MenuMusic.stop()
+		BossMusic.stop()
 		GameMusic.play()
 	load_player(100);
 	self.show_map(STARTING_MAP)

@@ -26,7 +26,10 @@ var tileMap
 var xy
 func _ready():
 	# Add potions to TileMap
-	
+	if not BossMusic.is_playing():
+		MenuMusic.stop()
+		GameMusic.stop()
+		BossMusic.play()
 	tileMap = get_node("Placeholder")
 	xy = tileMap.get_cell_size()
 	

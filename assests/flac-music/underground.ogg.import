@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/underground.ogg-1a960c94d4e00cb0125f57af7eff956f.oggstr"
+
+[deps]
+
+source_file="res://assests/flac-music/underground.ogg"
+dest_files=[ "res://.import/underground.ogg-1a960c94d4e00cb0125f57af7eff956f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
