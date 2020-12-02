@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-onready var maxSpeed = 100
+onready var maxSpeed = 70
 onready var playerPosition = Vector2.ZERO
 onready var direction = Vector2.ZERO
 var rng = RandomNumberGenerator.new()

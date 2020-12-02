@@ -34,8 +34,9 @@ var slimeDamageTimer = Timer.new()
 var fireDamageTimer = Timer.new()
 var slimeAttack = false
 var fireAttack = false
-# default gameplay movespeed is 1.2
-const MOVEMENT_SPEED = 2.5
+# default gameplay movespeed is 1.5
+# experimental movespeed is 2.5
+const MOVEMENT_SPEED = 1.5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentHealth = maxHealth

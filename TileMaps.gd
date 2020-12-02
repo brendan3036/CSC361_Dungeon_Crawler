@@ -20,6 +20,7 @@ var blackBanner = load("blackBanner.tscn")
 var fire = load("fire_bck.tscn")
 var stairs = load("stairs.tscn")
 var eyeball = load("eyeball_ncb.tscn")
+var gem = load("gem.tscn")
 
 # Called when the node enters the scene tree for the first time.
 var tileMap
@@ -48,6 +49,8 @@ func _ready():
 			node = healthPotion.instance()
 		elif name == "coins":
 			node = coins.instance()
+		elif name == "gem":
+			node = gem.instance()
 		elif name == "doubleScorePotion":
 			node = doubleScorePotion.instance()
 		elif name == "doubleDamagePotion":

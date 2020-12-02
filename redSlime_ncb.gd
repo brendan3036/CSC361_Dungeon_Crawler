@@ -17,7 +17,7 @@ func _ready():
 	var timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = false
-	timer.start(.5)
+	timer.start(.4)
 	timer.connect("timeout", self, "_timeout")
 	
 
@@ -39,7 +39,7 @@ func _process(delta):
 	
 	moveSpeed = 60 * delta
 	var movement = Vector2(0, 0)
-	if attackFlag and x < 5:
+	if attackFlag and x > 5:
 		movement = direction * moveSpeed
 		anim = "walking"
 	elif x == 1:
@@ -49,7 +49,7 @@ func _process(delta):
 	elif x == 2:
 		anim = "walking"
 		get_node("AnimatedSprite").flip_h = true
-		movement = Vector2(moveSpeed, 0)
+		movement = Vector2(-moveSpeed, 0)
 	# down
 	elif x == 3:
 		anim = "walking"

@@ -20,6 +20,7 @@ var blackBanner = load("blackBanner.tscn")
 var fire = load("fire_bck.tscn")
 var stairs = load("stairs.tscn")
 var eyeball = load("eyeball_ncb.tscn")
+var princess = load("Princess.tscn")
 
 # Called when the node enters the scene tree for the first time.
 var tileMap
@@ -69,6 +70,8 @@ func _ready():
 			node = stairs.instance()
 		elif name == "eyeball":
 			node = eyeball.instance()
+		elif name == "princess":
+			node = princess.instance()
 		place_node(node, pos)
 	pass
 
