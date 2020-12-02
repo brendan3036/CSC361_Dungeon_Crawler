@@ -1,12 +1,10 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://assests/ui/titlescreen.jpg" type="Texture" id=2]
-[ext_resource path="res://assests/skeleton spritesheet calciumtrice.png" type="Texture" id=3]
+[ext_resource path="res://assests/ui/Quicksand_Bold.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://assests/warrior spritesheet calciumtrice.png" type="Texture" id=4]
-[ext_resource path="res://assests/ui/Quicksand_Bold.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://VolumeSlider.gd" type="Script" id=6]
-[ext_resource path="res://MusicVolumeSlider.gd" type="Script" id=7]
+[ext_resource path="res://assests/skeleton spritesheet calciumtrice.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -20,56 +18,56 @@
 
 [sub_resource type="DynamicFont" id=6]
 size = 24
-font_data = ExtResource( 5 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 160, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 192, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 224, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 288, 32, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=17]
@@ -138,21 +136,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Theme" id=29]
+[sub_resource type="DynamicFont" id=29]
+size = 41
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=30]
-size = 41
-font_data = ExtResource( 5 )
+size = 19
+font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxEmpty" id=31]
-
-[sub_resource type="DynamicFont" id=32]
-size = 22
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=33]
-size = 22
-font_data = ExtResource( 5 )
+[sub_resource type="DynamicFont" id=31]
+size = 18
+font_data = ExtResource( 3 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -189,67 +183,69 @@ script = ExtResource( 1 )
 position = Vector2( 848.533, 311.52 )
 scale = Vector2( 4.5, 4.5 )
 frames = SubResource( 17 )
+frame = 9
 playing = true
 
 [node name="Warrior" type="AnimatedSprite" parent="."]
 position = Vector2( 224.925, 462.88 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 28 )
-frame = 5
+frame = 4
 playing = true
-
-[node name="MasterVolumeSlider" type="HSlider" parent="."]
-margin_left = 505.0
-margin_top = 211.263
-margin_right = 703.0
-margin_bottom = 272.263
-theme = SubResource( 29 )
-max_value = 1.0
-step = 0.05
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MusicVolumeSlider" type="HSlider" parent="."]
-margin_left = 505.188
-margin_top = 325.183
-margin_right = 703.188
-margin_bottom = 386.183
-theme = SubResource( 29 )
-max_value = 1.0
-step = 0.05
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TitleText" type="Label" parent="."]
 margin_left = 377.616
 margin_top = 35.0
 margin_right = 918.616
 margin_bottom = 113.0
-custom_fonts/font = SubResource( 30 )
+custom_fonts/font = SubResource( 29 )
 text = "Untitled Dungeon Crawler"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MasterVolumeText" type="Label" parent="."]
-margin_left = 523.251
-margin_top = 200.143
-margin_right = 689.251
-margin_bottom = 221.143
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = SubResource( 32 )
-text = "Master Volume"
+[node name="GameTutorial" type="Label" parent="."]
+margin_left = 318.515
+margin_top = 150.997
+margin_right = 951.515
+margin_bottom = 169.997
+custom_fonts/font = SubResource( 30 )
+text = "Venture through the dungeon, kill monsters and collect loot
+to gain points, and save the princess!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="."]
-margin_left = 529.354
-margin_top = 312.667
-margin_right = 681.354
-margin_bottom = 333.667
-custom_fonts/font = SubResource( 33 )
-text = "Music Volume"
-[connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="_on_value_changed"]
+[node name="wasd" type="Label" parent="."]
+margin_left = 554.496
+margin_top = 224.492
+margin_right = 713.496
+margin_bottom = 242.492
+custom_fonts/font = SubResource( 31 )
+text = "WASD: Movement"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spacebar" type="Label" parent="."]
+margin_left = 554.496
+margin_top = 281.492
+margin_right = 713.496
+margin_bottom = 299.492
+custom_fonts/font = SubResource( 31 )
+text = "Spacebar: Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="e" type="Label" parent="."]
+margin_left = 556.496
+margin_top = 337.492
+margin_right = 715.496
+margin_bottom = 355.492
+custom_fonts/font = SubResource( 31 )
+text = "E: Ascend Stairs"
+__meta__ = {
+"_edit_use_anchors_": false
+}

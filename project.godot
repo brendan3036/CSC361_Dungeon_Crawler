@@ -29,6 +29,7 @@ painSound1="*res://painSound1.tscn"
 painSound2="*res://painSound2.tscn"
 painSound3="*res://painSound3.tscn"
 potionDrink="*res://potionDrink.tscn"
+deathSound="*res://deathSound.tscn"
 
 [debug]
 

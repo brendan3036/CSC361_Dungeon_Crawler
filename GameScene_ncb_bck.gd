@@ -4,7 +4,6 @@ extends Node2D
 # Brendan
 const skeleton = preload("res://skeleton_bck.tscn")
 const warrior = preload("res://warrior_bck.tscn")
-const blueSlime = preload("res://blueSlime_bck.tscn")
 const healthBar = preload("res://GUI.tscn")
 var tileMap = load("TileMaps.tscn")
 var tileMap_2 = load("TileMaps_2.tscn")

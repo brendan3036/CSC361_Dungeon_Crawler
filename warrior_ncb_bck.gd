@@ -15,7 +15,7 @@ onready var damagePupText = get_node("damagePupText")
 #var slashPos = Vector2.ZERO
 var maxHealth = 100
 var currentHealth
-
+var dying = false
 var anim = "idle"
 var state = false
 var rng = RandomNumberGenerator.new()
@@ -32,6 +32,7 @@ var damageTimer = Timer.new()
 
 var slimeDamageTimer = Timer.new()
 var fireDamageTimer = Timer.new()
+var deathTimer = Timer.new()
 var slimeAttack = false
 var fireAttack = false
 # default gameplay movespeed is 1.5
@@ -193,6 +194,8 @@ func addScore(points):
 	score = score + (points * scoreMultiplier)
 
 func die():
+	
+	deathSound.play()
 	for obj in get_tree().get_root().get_children():
 		#slashPos = get_position() + Vector2(1,0)
 		if obj.is_in_group("music") or obj.is_in_group("essential"):
@@ -239,6 +242,8 @@ func _on_damage_area_exited(area):
 		
 func playHurtSound():
 	# also shake the screen
+	if currentHealth == 0:
+		return
 	$Camera2D.shake(0.2, 15, 1.5)
 	
 	rng.randomize()

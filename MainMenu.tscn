@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://assests/ui/Quicksand_Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu_bck.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assests/ui/titlescreen.jpg" type="Texture" id=5]
 [ext_resource path="res://Options.gd" type="Script" id=6]
 [ext_resource path="res://assests/warrior spritesheet calciumtrice.png" type="Texture" id=7]
+[ext_resource path="res://Tutorial.gd" type="Script" id=8]
 [ext_resource path="res://assests/skeleton spritesheet calciumtrice.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -51,121 +52,135 @@ font_data = ExtResource( 1 )
 size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=19]
-size = 41
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="DynamicFont" id=24]
+size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 160, 0, 32, 32 )
+[sub_resource type="DynamicFont" id=25]
+size = 41
+font_data = ExtResource( 1 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 192, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 224, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 256, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 7 )
 region = Rect2( 288, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="SpriteFrames" id=36]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=38]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=39]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=40]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 96, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=41]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 128, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=42]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 160, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=43]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 192, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=44]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 224, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=45]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 256, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=46]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 288, 32, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=41]
+[sub_resource type="SpriteFrames" id=47]
 animations = [ {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -190,10 +205,10 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="."]
-margin_left = 577.31
-margin_top = 217.409
-margin_right = 682.31
-margin_bottom = 244.409
+margin_left = 580.31
+margin_top = 214.409
+margin_right = 685.31
+margin_bottom = 241.409
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -225,10 +240,10 @@ __meta__ = {
 }
 
 [node name="Options" type="Button" parent="."]
-margin_left = 577.164
-margin_top = 255.163
-margin_right = 682.164
-margin_bottom = 282.163
+margin_left = 580.164
+margin_top = 250.163
+margin_right = 685.164
+margin_bottom = 277.163
 custom_styles/hover = SubResource( 13 )
 custom_styles/pressed = SubResource( 14 )
 custom_styles/focus = SubResource( 15 )
@@ -241,31 +256,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Tutorial" type="Button" parent="."]
+margin_left = 578.058
+margin_top = 288.442
+margin_right = 688.058
+margin_bottom = 308.442
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
+text = "How To Play"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TitleText" type="Label" parent="."]
 margin_left = 377.616
 margin_top = 35.0
 margin_right = 918.616
 margin_bottom = 113.0
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 25 )
 text = "Untitled Dungeon Crawler"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Warrior" type="AnimatedSprite" parent="."]
-position = Vector2( 223.925, 462.88 )
+position = Vector2( 224.925, 462.88 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 30 )
+frames = SubResource( 36 )
 animation = "idle"
-frame = 9
+frame = 3
 speed_scale = 1.5
 playing = true
 
 [node name="Skeleton" type="AnimatedSprite" parent="."]
-position = Vector2( 847.533, 311.52 )
+position = Vector2( 848.533, 311.52 )
 scale = Vector2( 4.5, 4.5 )
-frames = SubResource( 41 )
+frames = SubResource( 47 )
 animation = "idle"
-frame = 2
+frame = 4
 playing = true
 flip_h = true
