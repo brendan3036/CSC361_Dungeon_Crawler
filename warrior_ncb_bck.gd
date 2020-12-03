@@ -55,9 +55,9 @@ func _physics_process(delta):
 	if currentHealth <= 0:
 		die()
 	if scoreTimer:
-		scorePupText.text = "Double Points: " + String(int(scoreTimer.time_left+1)) + "sec"
+		scorePupText.text = "Double Points: " + String(int(scoreTimer.time_left+1)) + "s"
 	if damageTimer:
-		damagePupText.text = "Double Damage: " + String(int(damageTimer.time_left+1)) + "sec"
+		damagePupText.text = "Double Damage: " + String(int(damageTimer.time_left+1)) + "s"
 	var moveSpeed = 60 * delta
 	if anim == "attack" && animatedSprite.frame == animatedSprite.frames.get_frame_count("attack")-1:
 		anim = "idle"

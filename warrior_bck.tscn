@@ -288,7 +288,7 @@ margin_right = 113.0
 margin_bottom = -41.0
 visible_characters = 0
 percent_visible = 0.0
-text = "Double Score: 25sec"
+text = "Double Score: 25s"
 __meta__ = {
 "_edit_use_anchors_": false
 }
