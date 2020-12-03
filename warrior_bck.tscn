@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assests/warrior spritesheet calciumtrice.png" type="Texture" id=1]
 [ext_resource path="res://warrior_ncb_bck.gd" type="Script" id=2]
@@ -203,6 +203,8 @@ color_ramp = SubResource( 34 )
 radius = 12.0686
 height = 14.624
 
+[sub_resource type="StyleBoxEmpty" id=37]
+
 [node name="warrior_bck" type="KinematicBody2D" groups=[
 "camera_shaker",
 ]]
@@ -294,8 +296,9 @@ __meta__ = {
 [node name="damagePupText" type="RichTextLabel" parent="."]
 margin_left = -191.0
 margin_top = -67.0
-margin_right = 125.0
-margin_bottom = -27.0
+margin_right = 53.0
+margin_bottom = -47.0
+custom_styles/focus = SubResource( 37 )
 visible_characters = 0
 percent_visible = 0.0
 text = "Double Damage"

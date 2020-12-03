@@ -36,16 +36,17 @@ func _timeout():
 		# Pos = skeleton's position (locally)
 		var pos = get_position()
 		var skellyGlobal = get_global_position()
-		var offset = 20
-		var bulletSpawn = Vector2(pos.x - offset, pos.y + offset)
+		# was 20
+		var offset = 15
+		var bulletSpawn = Vector2(pos.x - offset, pos.y)
 		var node = bullet.instance()
 		node.look_at(playerPosition)
 		if playerPosition.x > skellyGlobal.x:
 			#bullet x needs to be on the right
 			bulletSpawn.x = pos.x + offset
-		if playerPosition.y < skellyGlobal.y:
-			#bullet y needs to be up
-			bulletSpawn.y = pos.y - offset
+#		if playerPosition.y < skellyGlobal.y:
+#			#bullet y needs to be up
+#			bulletSpawn.y = pos.y - offset
 			
 		
 		var tree = get_tree().get_root()
