@@ -22,14 +22,11 @@ var rng = RandomNumberGenerator.new()
 var x = 1
 var flag = 0
 var facing = 0
-
 var score = 0
 var scoreMultiplier = 1
 var scoreTimer = Timer.new()
-
 var damageMult = 1
 var damageTimer = Timer.new()
-
 var slimeDamageTimer = Timer.new()
 var fireDamageTimer = Timer.new()
 var deathTimer = Timer.new()
