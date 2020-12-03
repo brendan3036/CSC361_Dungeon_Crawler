@@ -38,7 +38,7 @@ const MOVEMENT_SPEED = 1.5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentHealth = maxHealth
-	print(currentHealth)
+	#print(currentHealth)
 #
 	pass
 
@@ -94,20 +94,28 @@ func _physics_process(delta):
 		get_node("AnimatedSprite/Particles2D").rotation_degrees = 190
 		facing = 0
 	if Input.is_action_pressed('space'):
-		state = true
-	if not movement:
+		if flag == 0:
+			state = true
+			slash()
+
+	if not movement and state:
+		anim = "attack"
+		state = false
+	elif not movement:
 		anim = "idle"
 		get_node("AnimatedSprite/Particles2D").emitting = false
 	
 	# If state, perform attack animation and instance the slash area/animation
-	if state:
-		if flag == 0:
-			#anim = "attack"
-			slash()
-			
-	if state and not movement:
-		state = false
-		anim = "attack"
+#	if state:
+#		if flag == 0:
+#			print("State ", state)
+#			state = false
+#			slash()
+#			if not movement:
+#				anim = "attack"
+#	if state and not movement:
+#		state = false
+#		anim = "attack"
 #	for obj in get_children():
 #		if obj.is_in_group("beta"):
 #			remove_child(obj)

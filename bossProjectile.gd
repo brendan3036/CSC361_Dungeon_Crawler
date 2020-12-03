@@ -16,7 +16,7 @@ func _ready():
 	playerPosition = warrior.get_global_position()
 	direction = (playerPosition - origin).normalized()
 	
-	print(direction)
+	#print(direction)
 
 func _physics_process(delta):
 	warrior = get_tree().get_root().get_node("Game").get_node("warrior_bck")
@@ -33,7 +33,7 @@ func _physics_process(delta):
 			# subtract x amount of hp from warrior 
 			warrior.playHurtSound()
 			warrior.currentHealth -= 10
-			print(warrior.currentHealth)
+			#print(warrior.currentHealth)
 			pass
 		queue_free()
 	
