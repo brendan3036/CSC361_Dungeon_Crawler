@@ -30,14 +30,14 @@ func _ready():
 func _timeout():
 	rng.randomize()
 	x = rng.randi_range(1,10)
-	if x > 4 and attackFlag:
+	if x > 5 and attackFlag:
 		# We have the player's position
 		var playerPosition = warrior.get_global_position()
 		# Pos = skeleton's position (locally)
 		var pos = get_position()
 		var skellyGlobal = get_global_position()
 		# was 20
-		var offset = 15
+		var offset = 20
 		var bulletSpawn = Vector2(pos.x - offset, pos.y)
 		var node = bullet.instance()
 		node.look_at(playerPosition)

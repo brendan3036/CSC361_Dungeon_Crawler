@@ -60,6 +60,10 @@ var credits = [
 		"Spritesheets edited with Piskel",
 		"piskelapp.com"
 	],[
+		"Playtested by:",
+		"Yong Hang Lin"
+	],
+	[
 		"Special thanks",
 		"Our parents",
 		"Our friends",
