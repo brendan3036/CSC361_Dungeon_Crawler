@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assests/spritesheets/slash/Classic_02.png" type="Texture" id=1]
+[ext_resource path="res://assests/spritesheets/slash/Classic_03.png" type="Texture" id=2]
+[ext_resource path="res://player/Slash.gd" type="Script" id=3]
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 40.4295
+
+[node name="Node2D" type="Area2D" groups=[
+"beta",
+]]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 1.103
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.42163, -3.21535 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 2 )
+[connection signal="area_entered" from="." to="." method="_on_Slash_area_entered"]

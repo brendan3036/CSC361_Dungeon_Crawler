@@ -16,21 +16,21 @@ _global_script_class_icons={
 [application]
 
 config/name="CSC361_Bream_Nate"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://menu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-MenuMusic="*res://menuMusic.tscn"
-GameMusic="*res://gameMusic.tscn"
-BossMusic="*res://bossMusic.tscn"
-coinSound="*res://coinSound.tscn"
-painSound1="*res://painSound1.tscn"
-painSound2="*res://painSound2.tscn"
-painSound3="*res://painSound3.tscn"
-potionDrink="*res://potionDrink.tscn"
-deathSound="*res://deathSound.tscn"
-sword="*res://Sword.tscn"
+MenuMusic="*res://menu/menuMusic.tscn"
+GameMusic="*res://sounds/gameMusic.tscn"
+BossMusic="*res://sounds/bossMusic.tscn"
+coinSound="*res://sounds/coinSound.tscn"
+painSound1="*res://sounds/painSound1.tscn"
+painSound2="*res://sounds/painSound2.tscn"
+painSound3="*res://sounds/painSound3.tscn"
+potionDrink="*res://sounds/potionDrink.tscn"
+deathSound="*res://sounds/deathSound.tscn"
+sword="*res://sounds/Sword.tscn"
 
 [debug]
 

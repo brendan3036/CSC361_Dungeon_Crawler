@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assests/dungeon tileset calciumtrice.png" type="Texture" id=1]
+[ext_resource path="res://environment/coins.gd" type="Script" id=2]
+
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.281481, 1 )
+colors = PoolColorArray( 0.882813, 0.380788, 0.0482788, 0.643137, 0.890196, 0.894118, 0.0941176, 0.756863 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 8, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 1.0
+angular_velocity_random = 0.62
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 2.0
+linear_accel_random = 0.2
+color_ramp = SubResource( 2 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 6.61808
+height = 8.05292
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 15, 354, 19, 15 )
+
+[node name="Particles2D" type="Particles2D" parent="Sprite"]
+amount = 12
+lifetime = 2.0
+process_material = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.629959, -1.25993 )
+rotation = 1.5708
+shape = SubResource( 4 )
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
