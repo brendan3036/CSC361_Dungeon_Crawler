@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assests/sound-effects/sword.wav" type="AudioStream" id=1]
+
+[node name="Sword" type="AudioStreamPlayer" groups=[
+"essential",
+]]
+stream = ExtResource( 1 )
+volume_db = -24.233
+pitch_scale = 1.01

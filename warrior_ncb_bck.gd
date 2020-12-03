@@ -148,6 +148,7 @@ func slash():
 	var tree = get_tree().get_root()
 	tree.add_child(node)
 	node.set_position(slashPos)
+	sword.play()
 	add_child(node)
 	var timer2 = Timer.new()
 	add_child(timer2)
